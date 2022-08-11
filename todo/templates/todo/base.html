@@ -3,6 +3,9 @@
 {{ user.username }}
 <form method="POST" action="{% url 'logoutuser' %}">
     {% csrf_token %}
+    <a href="{% url 'createtodo' %}">Create Todo</a>
+    <a href="{% url 'currenttodos' %}">Current Todos</a>
+    <a href="{% url 'completedtodos' %}">Completes Todos</a>
     <button type="submit">Logout</button>
 </form>
 {% else %}

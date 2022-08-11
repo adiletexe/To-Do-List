@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block content %}
-<h1> Your Todos </h1>
+<h1> Completed Todos </h1>
 <ul>
     {% for todo in todos %}
     <li>{% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>{% endif %}
         {% if todo.description %}-{{ todo.description }}{% endif %}
-        <a href="{% url 'viewtodo' todo.id %}">View Todo</a>
+        {{ todo.deadline|date:'M j Y H:i' }}
     </li>
     {% endfor %}
 </ul>
