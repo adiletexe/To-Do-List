@@ -1,0 +1,38 @@
+.regsystem {
+    float: right;
+}
+
+nav {
+    background: #f6ebf4;
+    padding: 2.5%;
+    float: left;
+    width: 400px;
+    height: 2000px;
+    color: #f6ebf4;
+    border-right: 10px solid #482673;
+}
+
+nav h3 {
+    margin-top: 50px;
+    font-size: 30px;
+    cursive;
+    font-weight: semi-bold;
+    line-height: 60px;
+    color: #482673;
+}
+
+nav ul {list-style: none}
+nav ul li, nav ul a {
+    color: black;
+    margin-top: 20px;
+    transition: transform .4s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+nav ul li:hover, aside ul a:hover {
+    color: red;
+    text-decoration: none;
+    transform: scale(1.2);
+}

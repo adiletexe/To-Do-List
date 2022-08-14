@@ -3,12 +3,18 @@
 
 {% block content %}
 <h1> Completed Todos </h1>
-<ul>
+<br><br>
+<div class="row justify-content-center">
     {% for todo in todos %}
-    <li>{% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>{% endif %}
-        {% if todo.description %}-{{ todo.description }}{% endif %}
-        {{ todo.deadline|date:'M j Y H:i' }}
-    </li>
+    <div class="col-md-10">
+        <div class="list-group">
+
+            <a href="{% url 'viewtodo' todo.id %}" class="list-group-item list-group-item-action{% if todo.important %} list-group-item-danger{% endif %}">
+                {{ todo.title }} {% if todo.description %} --- {{ todo.description }}{% endif %} --- {{ todo.deadline|date:'M j Y H:i' }}</a>
+        </div>
+    </div>
+    <br><br>
     {% endfor %}
-</ul>
+</div>
+
 {% endblock %}
